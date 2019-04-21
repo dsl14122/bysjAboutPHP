@@ -1,0 +1,175 @@
+/* main模块开始 */
+.main{
+    width: 100%;
+    /* height: 630px; */
+}
+.view_path{
+     line-height: 38px;
+     height: 38px;
+     width: 100%;
+}
+.main_left{
+    width: 210px;
+    height: 308px;
+    float: left;
+    border: 1px solid #dbdbdb;
+}
+.main_title{
+    height: 30px;
+    width: 210px;
+    text-align: center;
+    line-height: 30px;
+    font-weight: bold;
+    border-top: 1px solid #086bae;
+    color: #000;
+    background-color: #f7f7f7;
+}
+.main_sort{
+    border-top: 1px solid #dbdbdb;
+}
+.main_sort dl{
+    /* padding-left: 20px; */
+    margin-top: 8px;
+}
+.main_sort dl dt{
+    font-family: "楷体";
+    font-size: 20px;
+    color: #f40;
+}
+.main_sort dl dd{
+    display: block;
+    text-indent: 2em;
+    font-size: 20px;
+    font-family: "楷体";
+    line-height: 48px;
+    cursor: pointer;
+}
+.main_sort dl dd:hover {
+    background-color: #ccc;
+    color: #fff;
+}
+.main_sort dl dd a:hover {
+    color: #fff;
+}
+
+.main_right{
+    width: 778px;
+    /* height:560px; */
+    /* background-color: pink; */
+    float: right;
+    border: 1px solid #dbdbdb;
+    margin-bottom: 40px;
+}
+
+.collect_tit{
+    height: 31px;
+    width: 758px;
+    background-color: #f3f3f3;
+    padding-left: 20px;  
+    border-top: 2px solid #086bae;
+}
+.collect_tit span{
+    float: left;
+    line-height: 31px;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: "楷体";
+}
+ .collect_content .collect_top{
+      width: 100%;
+      height: 50px;
+      position: relative;
+      border-bottom: 1px solid #ccc;
+  }
+  .collect_top .rights{
+      position: absolute;
+      left: 20px;
+      bottom: 4px;
+      font-size: 14px;
+  }
+  .collect_top .lefts{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 24px;
+  } 
+  .collect_top .lefts a{
+      display: block;
+    width: 82px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    float: left;
+    border-radius: 5px;
+  }
+  .pur{
+      background-color: #ffe6a8;
+  }
+  .del{
+      background-color: #f7f5f6;
+  }
+ 
+  .collect_bottom .address_list{
+      width: 100%;
+  }
+
+  .collect_bottom .address_list tr {
+      padding-bottom: 10px;
+      display: block;
+      border-bottom: 1px solid #ccc;
+    margin-top: 10px;
+    width: 100%;
+  }
+  .collect_bottom .address_list tr .checkbox {
+    width: 20px;
+    padding: 5px 20px;
+    line-height: 25px;
+  }
+  .collect_bottom .address_list tr .book_s {
+    width: 100px;
+    text-align: center;
+  }
+  .collect_bottom .address_list tr .book_s a img {
+    width: 100%;
+  }
+  .collect_bottom .address_list tr .books_title {
+      width: 240px;
+    padding: 5px 10px;
+    line-height: 25px;
+  }
+  .collect_bottom .address_list tr .books_title a {
+    color: #06a;
+    font-size: 20px;
+  }
+  .collect_bottom .address_list tr .fav_price {
+    text-align: center;
+    width: 130px;
+  }
+  .collect_bottom .address_list tr .fav_price span {
+    color: #f63;
+    font-weight: bold;
+  }
+  .collect_bottom .address_list tr .t_center {
+    width: 56px;
+  }
+  .collect_bottom .address_list tr .t_center .book_buy {
+    display: block;
+    margin: 10px auto 10px;
+    width: 56px;
+    height: 21px;
+    background: url("../images/result_buy.jpg");
+    background-repeat: no-repeat;
+   
+  }
+  .collect_bottom .address_list tr .t_center .book_delete {
+    display: block; 
+    text-align: center;
+    color: #06a;
+  }
+  
+
+
+
+
+
+/* main模块结束 */

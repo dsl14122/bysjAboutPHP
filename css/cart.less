@@ -1,0 +1,137 @@
+/* head模块开始 */
+.header{
+    .search{
+        input{
+            text-indent: 0;
+            font-size: 16px;
+        }
+    }
+}
+
+/* 导航栏模块样式 */
+
+#navBar {
+
+    .flow_step {
+        height: 32px;
+        margin: 0 auto 10px;
+
+        .cols_1 {
+            width: 100%;
+
+            li {
+                width: 319px;
+                background: url(http://images.china-pub.com/images/shouye2012/bg_flow_step.png) no-repeat scroll 100% -64px #e6e6e6;
+                float: left;
+                padding: 0 15px 0 0;
+                text-align: center;
+                font: 700 14px/32px "宋体";
+                line-height: 32px;
+
+                &.step_1 {
+                    background-color: #3164AF;
+                    background-position: 100% -64px;
+                    color: #FFFFFF;
+                }
+
+                &.step_3 {
+                    background-image: none;
+                }
+            }
+        }
+
+    }
+}
+
+/* main模块 */
+#main {
+    // height: 300px;
+
+    .cart_title {
+        width: 100%;
+
+        h2 {
+
+            font-size: 16px;
+            font-family: 宋体;
+            line-height: 32px;
+        }
+    }
+
+    .cart_content {
+        table {
+            border-right: 1px solid #ddd;
+            border-top: 3px solid #3164AF;
+            text-align: center;
+
+            thead {
+                th {
+                    height: 37px;
+                    line-height: 37px;
+                    background: url('http://images.china-pub.com/images/shouye2012/flow_pro_bg.jpg') repeat-x;
+                    border: 1px solid #ddd;
+                    border-width: 0 0 1px 1px;
+                    &.caozuo{
+                        border-width: 0 1px 1px 1px;
+                    }
+                    }
+            }
+
+            tbody {
+                tr {
+                    td {
+                        padding: 5px;
+                        border: 1px solid #ddd;
+                        border-width: 0 0 1px 1px;
+
+                        .cart_book {
+                            ul {
+                                li {
+                                    height: 91px;
+                                    float: left;
+                                    vertical-align: middle;
+
+                                    a {
+                                        img {
+                                            height: 91px;
+                                            width: 65px;
+                                        }
+                                    }
+
+                                    &.cart_book_name {
+                                        margin-left: 10px;
+
+                                        a {
+                                            display: block;
+                                            height: 100%;
+                                            padding-top: 30px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                       &.td_delete{
+                        border-width: 0 1px 1px 1px;
+                       }
+
+                    }
+                }
+            }
+        }
+        .count{
+            text-align: right;
+            padding-right: 70px;
+            color: #000;
+            font-size: 14px;
+           .pro_money{
+             line-height: 30px;
+           }
+           .pro_total{
+               #total_account{
+                    color: #fc7215;
+                    font-size: 20px;
+                }
+           }
+        }
+    }
+}

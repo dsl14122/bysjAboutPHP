@@ -1,0 +1,134 @@
+/* main模块开始 */
+.main{
+    width: 100%;
+    /* height: 1500px; */
+}
+.view_path{
+     line-height: 38px;
+     height: 38px;
+     width: 100%;
+}
+.main_left{
+    width: 210px;
+    height: 308px;
+    float: left;
+    border: 1px solid #dbdbdb;
+}
+.main_title{
+    height: 30px;
+    width: 210px;
+    text-align: center;
+    line-height: 30px;
+    font-weight: bold;
+    border-top: 1px solid #086bae;
+    color: #000;
+    background-color: #f7f7f7;
+}
+.main_sort{
+    border-top: 1px solid #dbdbdb;
+}
+.main_sort dl{
+    /* padding-left: 20px; */
+    margin-top: 8px;
+}
+.main_sort dl dt{
+    font-family: "楷体";
+    font-size: 20px;
+    color: #f40;
+}
+.main_sort dl dd{
+    display: block;
+    text-indent: 2em;
+    font-size: 20px;
+    font-family: "楷体";
+    line-height: 48px;
+    cursor: pointer;
+}
+.main_sort dl dd:hover {
+    background-color: #ccc;
+    color: #fff;
+}
+.main_sort dl dd a:hover {
+    color: #fff;
+}
+
+.main_right{
+    width: 778px;
+    float: right;
+    /* border: 1px solid #dbdbdb; */
+}
+.inform_tit{
+    background-color: #87CEEB;
+    height: 30px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.inform_tit span{
+    display: block;
+    font-size: 16px;
+    line-height: 30px;
+    margin-left: 15px;
+    color:#014D7F;
+}
+
+.add_address h3{
+    color: #FF5000;
+    
+}
+.form-group{
+    /* background-color: greenyellow; */
+    margin: 40px;
+}
+.form-group label{
+    width: 80px;
+    display: inline-block;
+    color: #666;
+    text-align: right;
+    padding-right: 12px;
+}
+.form-group input{
+    border: 1px solid #333;
+    width: 420px;
+    height: 26px;
+    padding: 4px;
+}
+#det_address{
+   height: 35px;
+}
+.submit{
+    width:60px;
+    height: 35px;
+    font-size: 16px;
+    margin-left: 20px;
+    background-color: #5584FF;
+    color: #fff;
+    border: 0;
+    border-radius: 5px;
+}
+.addressList{
+    box-sizing: border-box;
+    margin-bottom: 100px;
+}
+.addressList table{
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.addressList th{
+    background: #ebecf0;
+    color: #333;
+    text-align: left;
+    font-weight: 400;
+    border: 1px solid #dcdee3;
+    padding: 12px 16px;
+}
+.addressList  td{
+    padding: 0;
+    border: 1px solid #dcdee3;
+    padding: 12px 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+ }
+ .addressList  .delete:hover{
+     cursor: pointer;
+ }
+/* main模块结束 */

@@ -1,0 +1,160 @@
+/* 书店top开始 */
+.w{
+    width: 1200px;
+    margin: auto;
+   
+}
+.top img{
+    width: 80px;
+    height: 80px;
+}
+.top_header{
+    width: 300px;
+    height: 60px;
+    display: inline-block;
+    margin-left: 24px;
+}
+.top .top_header h1{
+    display: inline-block;
+    font-family: "楷体";
+    font-size: 34px;
+}
+
+.improve {
+    float: right;
+    margin-top: 54px;
+}
+.main_login{
+    width: 100%;
+    height: 520px;
+    background: url(../images/登录图片/login.jpg) ;
+    background-size: 100%;
+}
+/* 书店top结束 */
+/* 书店main开始 */
+.wrap{
+    width: 400px;
+    height: 350px;
+    background-color: white;
+    border: 1px;
+    float: right;
+    margin-right: 170px; 
+    margin-top: 90px
+
+}
+
+.wrap .wrap_title{
+    width: 100%;
+    height: 60px;
+    text-align: center;
+}
+.wrap .wrap_title span{
+
+    font: bold 40px  "楷体";
+    line-height: 80px;  
+    color: #000; 
+}
+.wrap .wrap_button{
+    width: 398px;
+    height: 190px;
+    border: 1px solid #d8d8d8;
+    border-bottom: transparent;
+}
+.wrap .wrap_button .wrap_inp{
+    width: 360px;
+    height: 60px;
+    border: 1px solid #d8d8d8;
+    margin: 25px auto; 
+}
+.wrap_button .wrap_inp span{
+    float: left;
+    display: block;
+    width: 60px;
+    height: 60px;
+    background: url(../images/登录图片/new_user.png) no-repeat;
+    background-size: 100%;
+}
+.wrap_button .wrap_inp .inp_pas{
+    background-image: url(../images/登录图片/new-ps.png);
+}
+
+.wrap_button .wrap_inp input{
+    float: right;
+    width: 300px;
+    height: 60px;
+    font-size: 14px;
+    text-indent: 2em;
+}
+
+.wrap .wrap_link{
+    width: 100%;
+    height: 25px;
+    line-height: 25px;
+}
+.wrap_link input{
+    float: left;
+    margin-left: 20px;
+    margin-top: 7px;
+}
+
+.wrap_link span {
+    float: left;
+    margin-left: 5px;
+}
+.wrap_link  a{
+    float: right;
+}
+
+.wrap .wrap_submit{
+    width: 100%;
+    height: 75px;
+   text-align: center;
+   overflow: hidden;
+}
+.wrap .wrap_submit input{
+    display: block;
+    margin: 12px auto;
+    line-height: 50px;
+     color: #fff;
+     font-size: 35px;
+     font-family: "楷体";
+    width: 360px;
+    height: 50px;
+    border-radius: 20px;
+    background-color: #ff2832;
+    cursor: pointer;
+}
+/* 书店main结束 */
+/* 书店footer开始 */
+.footer{
+    border-top: 1px solid #8c8c8c;
+    text-align: center;
+     margin-top: 80px;
+}
+.footer .footer_nav a{
+    font-size: 20px;
+    font-family: "楷体";
+}
+.footer .footer_nav span{
+    margin: 0 20px 0 20px;
+}
+.footer_copyright{
+     width: 1200px;
+    height: 30px;
+    text-align: center;
+     margin-top: 20px;
+}
+.footer_copyright span{
+    margin-left: 200px;
+    font-size: 14px;
+    color: #8c8c8c;
+    font-family: "楷体";
+    display: inline-block;
+}
+.footer_end{
+     display: inline-block;
+     height: 30px;
+     font-family: "楷体";
+     font-size: 14px;
+}
+/* 书店footer结束 */

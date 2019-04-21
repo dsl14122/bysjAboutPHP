@@ -1,0 +1,107 @@
+/* main模块开始 */
+.main{
+    width: 100%;
+    /* height: 1000px; */
+}
+.view_path{
+     line-height: 38px;
+     height: 38px;
+     width: 100%;
+}
+.main_left{
+    width: 210px;
+    height: 308px;
+    float: left;
+    border: 1px solid #dbdbdb;
+}
+.main_title{
+    height: 30px;
+    width: 210px;
+    text-align: center;
+    line-height: 30px;
+    font-weight: bold;
+    border-top: 1px solid #086bae;
+    color: #000;
+    background-color: #f7f7f7;
+}
+.main_sort{
+    border-top: 1px solid #dbdbdb;
+}
+.main_sort ul{
+    padding-left: 50px;
+    margin-top: 15px;
+
+}
+.main_sort ul li{
+     list-style: disc;
+     line-height: 24px;
+}
+
+.main_right{
+    width: 778px;
+    float: right;
+    margin-bottom: 50px;
+}
+.message{
+    width: 600px;
+     height: 300px;
+     /* background-color: pink; */
+     margin-left: 50px;
+}
+.message .msg_tiile{
+    height: 16.66%;
+    border-bottom: 1px dotted #ccc;
+    margin-bottom: 10px;
+}
+.message .msg_tiile span{
+    display: block;
+    line-height: 50px;
+    font-weight: bold;
+    font-size: 16px;  
+}
+.message .msg_content{
+    height: 83.33%;
+
+}
+.con_left{
+     width: 40%;
+     float: left;
+     text-align: center;
+}
+.con_right{
+    float: left;
+    width: 60%;
+}
+.con_right div{
+    font-size: 14px;
+    margin: 10px;
+}
+.con_right div .red{
+    color: #ff6633;
+    font-weight: bold;
+}
+.con_right .cal span{
+    display: inline-block;
+    background-color: #fff;
+    width: 25px;
+    text-align: center;
+}
+.buy .shopcart{
+    display: inline-block;
+     width: 138px;
+     height: 40px;
+     
+}
+.buy .shopbuy{
+    display: inline-block;
+     width: 138px;
+     height: 40px;
+    text-align: center;
+    line-height: 40px;
+    background-color: #fb9e13;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 15px;
+}
+
+/* main模块结束 */

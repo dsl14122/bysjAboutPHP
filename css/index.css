@@ -1,0 +1,181 @@
+/* main模块部分开始 */
+
+.main .banner{
+    width: 774px;
+    height: 400px;
+    float: right;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.main .banner .focus{
+    width: 535px;
+    height: 400px;
+    float: left;
+    position: relative;
+    background-color: #eeeeee;
+    border-left:1px solid #ccc; 
+    border-right:1px solid #ccc;
+    overflow: hidden;
+}
+.lbt{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3800px;
+    height: 370px;
+  
+}
+.lbt ul{
+    display: inline-block;
+}
+.focus .focus_center a{
+    display: block;
+    float: left;
+    margin-left: 1px;
+}
+ .focus .focus_bottom{
+   position: absolute;
+   bottom: 0;
+   right: 0;
+}
+ .focus_bottom li{
+    float: left;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: #999999;
+    margin:8px 2px 0;
+    cursor: pointer;
+}
+li.cur{
+    background-color: #c00;
+    font-weight: bold;
+    color: #fff;
+}
+.main .banner .newflash{
+    width: 226px;
+    height: 400px;
+    float: right;
+    border: 1px solid #e0e0e0;
+}
+.newflash .newflash_tit{
+    height: 27px;
+    border-bottom: 1px solid #e0e0e0;
+    overflow: hidden;
+     background: url(../images/首页图片/dsl_hdbb.jpg) #f9f9f9;
+}
+.newflash .newflash_tit a{
+    margin-left: 175px;
+    margin-top: 6px;
+    display: block;
+    height: 28px;
+    color: #666;
+}
+
+.newflash .newflash_list li{
+    list-style:disc;
+    margin-left: 20px;
+    height: 24px;
+    line-height: 24px;
+}
+.newflash .newflash_list li:hover{
+    text-decoration: underline;
+}
+.main  .main_nav{
+    width: 1002px;
+    height: 330px;
+    float: left;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+
+}
+.main  .main_nav h4{
+    width: 126px;
+    height: 22px;
+    line-height: 20px;
+    text-align: center;
+    float: left;
+    font-size: 14px;
+    padding-top: 8px;
+    cursor: pointer;
+    margin-left: -1px;
+    background: url(../images/首页图片/main_nav_link.jpg) no-repeat;
+}
+.main  .main_nav h4:first-child{
+    margin-left: 0px;
+}
+.main  .main_nav .tab_1{
+    width: 100%;
+    height: 300px;
+    float: left;
+}
+.tab_1 .book li{
+    float: left;
+}
+.tab_1 .book li a{
+    display: block;
+    width: 200px;
+    height: 300px;
+    text-align: center;
+    margin: 20px  0;
+}
+.tab_1 .book li a img{
+    margin-bottom: 14px;
+}
+.tab_1 .book li a p{
+    margin-top:10px; 
+}
+ .book_price{
+    text-decoration: line-through;
+    color: #999999;
+}
+  .book_dis{
+    color: #ff6633;
+    margin-left: 10px;
+}
+
+.main_top{
+    width: 100%;
+     height: 514px;
+     float: left;
+     margin-bottom: 10px;
+}
+.main_top h2 {
+    padding: 10px 15px 0px;
+    height: 25px;
+    font-size: 18px;
+    color: #06a;
+}
+.main_top .main_top_banner{
+    margin: 10px 10px 0;
+}
+.main_top_banner .fleft{
+    float: left;
+}
+.main_top_banner .fright{
+    float: right;
+}
+.banner_book{
+    width: 100%;
+    height: 319px;
+    float: left;
+}
+.banner_book li{
+    float: left;
+     height: 100%;
+    text-align: center;
+}
+.banner_book li a{
+    display: block;
+    width: 167px;
+    margin: 20px  0;
+}
+.banner_book li a img{
+    margin-bottom: 14px;
+}
+.banner_book li a p{
+    margin-top:10px; 
+}
+ 
+/* main模块部分结束 */

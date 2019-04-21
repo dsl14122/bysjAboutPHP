@@ -1,0 +1,96 @@
+
+body,
+div,
+a,
+img,
+input,
+span,
+p,
+ul,
+li,
+h1,
+h2,
+h3,
+h4,
+i,
+em,
+dl,
+dt,
+dd,
+tr,
+td,
+ins,
+del,
+strong{
+    margin:0;
+    padding:0
+}
+em,
+i{
+    font-style:normal
+}
+li{
+    list-style:none
+}
+ul{
+    margin: 0;
+    padding: 0;
+}
+
+img{
+    border:0;
+    vertical-align:middle;
+}
+button{
+    cursor:pointer
+}
+a{
+    color:#000;
+    text-decoration:none
+}
+a:hover{
+    color:#e33333
+}
+input{
+    border: 0;
+    outline: none
+}
+button,
+input{
+    font-family:Microsoft YaHei,Heiti SC,tahoma,arial,Hiragino Sans GB,\\5B8B\4F53,sans-serif
+}
+body{
+    -webkit-font-smoothing:antialiased;
+    background-color:#fff;
+    font:12px/1.5 Microsoft YaHei,Heiti SC,tahoma,arial,Hiragino Sans GB,\\5B8B\4F53,sans-serif;
+    color:#666;
+}
+.clearfix:after{
+    visibility:hidden;
+    clear:both;
+    display:block;
+    content:".";
+    height:0;
+}
+.clearfix{
+    *zoom:1
+}
+
+.hide,
+.none{
+    display:none;
+}
+.float_t{
+    float: left;
+}
+.float_r{
+    float: right;
+}
+.show{
+    display: block;
+}
+/* 版心设定 */
+.w{
+    width: 1004px;
+    margin:  0 auto;
+}

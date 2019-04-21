@@ -1,0 +1,129 @@
+/* main模块开始 */
+.main{
+    width: 100%;
+    /* height: 1000px; */
+}
+.view_path{
+     line-height: 38px;
+     height: 38px;
+     width: 100%;
+}
+.main_left{
+    width: 210px;
+    height: 308px;
+    float: left;
+    border: 1px solid #dbdbdb;
+}
+.main_title{
+    height: 30px;
+    width: 210px;
+    text-align: center;
+    line-height: 30px;
+    font-weight: bold;
+    border-top: 1px solid #086bae;
+    color: #000;
+    background-color: #f7f7f7;
+}
+.main_sort{
+    border-top: 1px solid #dbdbdb;
+}
+.main_sort ul{
+    padding-left: 50px;
+    margin-top: 15px;
+
+}
+.main_sort ul li{
+     list-style: disc;
+     line-height: 24px;
+}
+
+.main_right{
+    width: 778px;
+    float: right;
+    margin-bottom: 50px;
+}
+.paixu{
+    height: 31px;
+    width: 758px;
+    background-color: #f3f3f3;
+    padding-left: 20px;  
+    border-top: 2px solid #086bae;
+    border-bottom: 1px solid #dddddd;
+}
+.paixu span{
+    float: left;
+    line-height: 31px;
+}
+.paixu ul{
+  display: inline-block;
+  margin-left: 20px;
+}
+.paixu ul li{
+    padding: 0 8px 3px 8px;
+    cursor: pointer;
+    float: left;
+    margin-top: 7px;
+    font-size: 13px;
+    margin-left: 30px;
+   background: url(../images/line.jpg) repeat-x;
+}
+.paixu  .pai_cur {
+    background: url(../images/line_o.jpg) repeat-x ;
+}
+.paixu .pai_cur a{
+  color: #fff;
+  background: url(../images/up.gif) no-repeat 53px 1px;
+}
+.paixu li a{
+    display: block;
+    width: 60px;
+    height: 17px;
+    background: url(../images/down.gif) no-repeat 53px 1px;
+}
+.books_sorts{
+    width: 763px;
+    margin-left: 15px;
+}
+.books_sorts table{
+    width: 763px;
+    vertical-align: top;
+}
+
+.books_sorts table tbody tr{
+    display: block;
+    height: 181px;
+    width: 763px;
+    margin-top: 25px;
+    border-bottom: 1px solid #ddd;
+}
+.books_sorts tr td {
+    line-height: 27px;
+}
+.books_sorts td img{
+    width: 90px;
+}
+.books_sorts td li{
+    margin-bottom: 10px;
+}
+.result_name a{
+    font-size: 16px;
+    color: #0066aa;
+}
+.result_price b{
+    font-size: 14px;
+    color: #fb751b;
+}
+.book_buy{
+    background: url(../images/result_buy.jpg);
+}
+.book_fav{
+    background: url(../images/result_fav.jpg);
+}
+.book_buy,
+.book_fav{
+    width: 56px;
+    height: 21px;
+    display: inline-block;
+    margin-left: 10px;
+}
+/* main模块结束 */

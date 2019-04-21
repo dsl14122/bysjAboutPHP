@@ -1,0 +1,110 @@
+/* main模块开始 */
+.main{
+    width: 100%;
+    height: 630px;
+}
+.view_path{
+     line-height: 38px;
+     height: 38px;
+     width: 100%;
+}
+.main_left{
+    width: 210px;
+    height: 308px;
+    float: left;
+    border: 1px solid #dbdbdb;
+}
+.main_title{
+    height: 30px;
+    width: 210px;
+    text-align: center;
+    line-height: 30px;
+    font-weight: bold;
+    border-top: 1px solid #086bae;
+    color: #000;
+    background-color: #f7f7f7;
+}
+.main_sort{
+    border-top: 1px solid #dbdbdb;
+}
+.main_sort dl{
+    /* padding-left: 20px; */
+    margin-top: 8px;
+}
+.main_sort dl dt{
+    font-family: "楷体";
+    font-size: 20px;
+    color: #f40;
+}
+.main_sort dl dd{
+    display: block;
+    text-indent: 2em;
+    font-size: 20px;
+    font-family: "楷体";
+    line-height: 48px;
+    cursor: pointer;
+}
+.main_sort dl dd:hover {
+    background-color: #ccc;
+    color: #fff;
+}
+.main_sort dl dd a:hover {
+    color: #fff;
+}
+
+.main_right{
+    width: 778px;
+    height:560px;
+    /* background-color: pink; */
+    float: right;
+    border: 1px solid #dbdbdb;
+}
+
+.inform_tit{
+    height: 31px;
+    width: 758px;
+    background-color: #f3f3f3;
+    padding-left: 20px;  
+    border-top: 2px solid #086bae;
+}
+.inform_tit span{
+    float: left;
+    line-height: 31px;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: "楷体";
+}
+.mTop{
+    margin-top: 10px
+}
+.mLeft{
+  margin-left: 40px;
+}
+.inform_tb{
+    width: 100%;
+    font-family: "楷体";
+    font-size: 18px;
+}
+.inform_tb td{
+    height: 45px;
+    line-height: 45px;
+  }
+.t_right{
+    width:160px;
+    text-align: right;
+}
+input{
+    border: 1px solid #ccc
+}
+.introd{
+    width: 332px;
+    height: 100px;
+}
+#inform_btn{
+    width: 100px;
+    height: 30px;
+    font-family: "楷体";
+    font-size: 18px;
+}
+
+/* main模块结束 */
