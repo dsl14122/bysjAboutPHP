@@ -36,7 +36,7 @@
             </div>
             <div class="list">
                 <ul>
-                    <li><a href="Inform.php">我的致青春</a></li>
+                    <li><a href="#">我的致青春</a></li>
                     <li class="line"></li>
                     <li><a href="#">用户信息</a></li>
                     <li class="line"></li>
@@ -81,7 +81,7 @@
         <div class="cart_title">
             <h2 class='mycart'>我的购物车</h2>
         </div>
-        <div class="cart_content">
+        <div class="cart_content" id="app">
             <table border="0" cellpadding="0" cellspacing="0" id="tb">
                <thead>
                     <tr>
@@ -100,45 +100,46 @@
                
                 <tbody >
                   
-                    <!-- <tr class='tr' >
-                        <td><input type="checkbox"></td>
+                   
+                   <tr v-for="(item,index) in arr" >
+                        <td><input type="checkbox" ></td>
                         <td>
                             <div class="cart_book">
                                 <ul>
                                     <li >
                                         <a href="#">
-                                            <img  src="http://images.china-pub.com/ebook5235001-5240000/5237414/zcover.jpg">
+                                            <img  :src="item.b_pic">
                                         </a>
                                     </li>
                                     <li class="cart_book_name">
-                                        <a href="#">React快速上手开发</a>
+                                        <a href="#">{{item.b_name}}</a>
                                     </li>
                                 </ul>
                             </div>
                         </td>
-                        <td >￥{{price}}</td>
+                        <td >￥{{item.b_price}}</td>
                         <td>
                         <div >
-                           <button v-on:click="count=count-1<0?0:count-1">-</button> 
-                           <span class='count'>{{ count }}</span>
-                           <button v-on:click="count++">+</button>
+                            <button   @click="sub(index)" :disabled="item.cartNum==1">-</button>
+                            <input type="number" :value="item.cartNum">
+                            <button @click="add(index)"  >+</button>
+                      
                            </div>
                         </td>
-                        <td>￥{{ price * count }}</td>
-                        <td class='td_delete'><a href="javascript:void(0)">删除</a></td>
-                    </tr> -->
+                        <td>￥{{ item.b_price *item.cartNum }}</td>
+                        <td class='td_delete'><a href="javascript:void(0);" @click='del(index)'>删除</a></td>
+                    </tr> 
+                  
 
                 </tbody>
             </table>
-            <div class='count'>
-                        <div class="pro_money">商品金额共计 ￥<span id="total_yuanjia">49.00</span>
-                        </div> 
-                        <div class='pro_total' >
-                            总计（不含运费）<span id="total_account" >￥<i>39.20</i> </span>
-                        </div> 
-                        
+            <div class='count' >
+                <div class="pro_money">商品金额共计 ￥<span id="total_yuanjia">49.00</span>
+                </div> 
+                <div class='pro_total' >
+                    总计（不含运费）<span id="total_account" >￥<i>39.20</i> </span>
+                </div> 
              </div>   
-
         </div>
     </div>
     <!-- main模块结束 -->
@@ -205,79 +206,55 @@
 </body>
 
 </html>
-
-<!-- 模板创建 -->
-<script id='tpl' type='text/html'>
-    {{each list value}}
-             <tr class='tr' >
-                        <td><input type="checkbox"></td>
-                        <td>
-                            <div class="cart_book">
-                                <ul>
-                                    <li >
-                                        <a href="#">
-                                            <img  src="{{value.b_pic}}">
-                                        </a>
-                                    </li>
-                                    <li class="cart_book_name">
-                                        <a href="#">{{value.b_name}}</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </td>
-                        <td >￥{{value.b_price}}</td>
-                        <td>
-                        <div >
-                           <button v-on:click="count=count-1<0?0:count-1">-</button> 
-                           <span  v-text="count"></span>
-                           <button v-on:click="count++">+</button>
-                           </div>
-                        </td>
-                        <td >￥39.20</td>
-                        <td class='td_delete'><a href="javascript:void(0)">删除</a></td>
-                </tr>
-             {{/each}}
-</script>
 <script src="js/jquery-1.12.4.js"></script>
 <!-- <script src="./js/mui.min.js"></script> -->
 
 <script src="./js/template-web.js"></script>
 <script src="./js/vue.min.js"></script>
 <script>
-new Vue({
-           el:'.tr',
-           data:{
-             price:2,
-             count:1
-           }
-         })
-</script>
-<script>
   $(function () {
     // 初始化
-    getCart();
-    // function init(){
-    //     mui('.mui-numbox').numbox();
-    // }
+    Vue.filter('capitalize', function (value) {
+  if (!value) return ''
+  value = value.toString()
+  return value.charAt(0).toUpperCase() + value.slice(1)
+})
+
+
+
+   //vue 渲染页面
+      let app=new Vue({
+        el:'#app',
+        data:{
+            arr:[]
+        },
+        created:function(){
+            this.getCart()
+        },
+        methods:{
+        getCart(){
+            const that=this
+            $.ajax({
+                url:'admin/api/getCart.php',
+                dataType:'json',
+                success:function(data){
+                    console.log(data);
+                    that.arr=data
+
+                }
+            }) 
     
-
-   //展示购物车列表数据
-   function  getCart(){
-      $.ajax({
-          url:'admin/api/getCart.php',
-          dataType:'json',
-          success:function(data){
-              console.log(data);
-            //   num= data[0].b_price;
-            //   console.log(num);
-              
-            var html=template('tpl',{list:data});
-            $('tbody').html(html);
-             
+            },
+         add(index){
+            this.arr[index].cartNum++
+        },
+        sub(index){
+            this.arr[index].cartNum--
+        }, 
           }
-      }) 
+     
+     })
 
-   }
 
 
     })

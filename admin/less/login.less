@@ -1,0 +1,38 @@
+@main-color:#1c77ac;
+body{
+    background: url('../images/light.png') no-repeat @main-color;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form{
+    width: 500px;
+    height: 340px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 20px;
+    border-radius: 20px;
+    position: relative;
+    .title{
+        font-size: 30px;
+        font-weight: bold;
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        margin-left: -120px;
+         color: @main-color;
+    }
+    .form-group{
+        width: 470px;
+         .btn-login{
+             width: 100%;
+             background-color: @main-color;
+             color: #fff;
+             margin-top: 15px;
+         }
+    }
+}
