@@ -5,32 +5,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>后台主页</title>
+    <link rel="stylesheet" href="./less/base.css">
     <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="./less/index.css">
 </head>
 <body>
-    <main id="main">
-        <div class="main-title">
-            <div class="top-left">1sd
-                <!-- <a href="#">
+    <main id="main" class='main' >
+
+        <div class="main_title">
+            <div class="top_left">
+                <a href="#">
                     <h2>书店信息管理系统界面</h2>
-                </a> -->
+                </a>
             </div>
-            <div class="top-right">2sdd
-                <!-- <div class="logout">
+            <div class="top_right">
+                <div class="logout">
                     <a href="#"><span>退出</span></a>
                 </div>
                 <div class="user">
                     <span>欢迎您，admin</span>
-                </div> -->
+                </div>
             </div>
         </div>
-        <div class="main-content">
-            <div class="main-left">
-
+        <div class="main_content">
+            <div class="main_left">
+                <div class="list-group">
+                    <a href="index.html" class="list-group-item active"> 服务器信息 </a>
+                    <!-- 通过data-toggle 和 data-target来和后面的一级二级分类关联 点击切换
+                    使用collapse插件 -->
+                    <a href="#" class="list-group-item" data-toggle="collapse" data-target="#categoryManage">个人中心</a>
+                    <div class="collapse list-group" id="categoryManage">
+                        <a href="product.html" class="list-group-item">商品管理</a>
+                        <a href="address.html" class="list-group-item">收货地址管理</a>
+                    </div>
+                    <a href="userInfo.html" class="list-group-item">用户信息管理</a>
+                </div>
             </div>
-            <div class="main-right">
-
+            <div class="main_right">
+                     <div class="row bg-info">
+                            <div class="col-md-12">服务器信息</div>
+                    </div>
+                     <div class="row">
+                            <div class="col-md-3">服务器信息</div>
+                            <div class="col-md-9">Apache</div>
+                    </div>
+                     <div class="row">
+                            <div class="col-md-3 ">PHP软件版本</div>
+                            <div class="col-md-9 ">5.3.29</div>
+                    </div>
+                     <div class="row">
+                            <div class="col-md-3 ">当前访问ip</div>
+                            <div class="col-md-9 ">127.0.0.1</div>
+                    </div>
+                     <div class="row">
+                            <div class="col-md-3 ">操作系统</div>
+                            <div class="col-md-9 ">Windows 10</div>
+                    </div>
+                     <div class="row">
+                            <div class="col-md-3 ">计算机名</div>
+                            <div class="col-md-9 ">DAILONG</div>
+                    </div>
+                     <div class="row">
+                            <div class="col-md-3 ">处理器可用核心数</div>
+                            <div class="col-md-9 ">4</div>
+                    </div><br>
+                    <div class="row bg-danger">
+                            <div class="col-md-12">维护信息</div>
+                    </div>
+                    <div class="row">
+                            <div class="col-md-3 ">项目开发人员</div>
+                            <div class="col-md-9 ">戴尚龙</div>
+                    </div>
+                    <div class="row">
+                            <div class="col-md-3 ">联系方式</div>
+                            <div class="col-md-9 ">QQ:1596750698</div>
+                    </div>
+                    <div class="row">
+                            <div class="col-md-3 ">项目详情</div>
+                            <div class="col-md-9 ">github.com/dsl14122/bysjAboutPHP</div>
+                    </div>
             </div>
         </div>
     </main>
