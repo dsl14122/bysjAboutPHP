@@ -37,11 +37,12 @@ $(function(){
            },
            success:function(data){
             // 4.判断信息是否正确
-              console.log(data);
-              if(data.msg=="ok"){
+            //   console.log(data); 
+              if(data.length){
+                 window.sessionStorage.setItem('users',data[0].username);
                  location="index.html"
               }else{
-                 alert ('失败')
+                 alert ('用户名或密码错误！')
               }
                
            }

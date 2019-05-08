@@ -10,18 +10,21 @@ require_once "./dbSql.php";
  $sql="select * from admin_user where username='$username' and password='$password'";
  
  //操作数据库
-  $res=mysqli_c($sql);
+  $arr=mysqli_c($sql);
   
+  echo json_encode($arr);
   
   //判断结果
-  if($res){   
+//   if(count($arr)>0){   
+//      //开启session
+//     session_start();
+//     $_SESSION['Users']=$arr[0];
+//     echo '{ "code":10000, "msg":"ok" }';
     
-    echo '{ "code":10000, "msg":"ok" }';
-    
-}else{
+// }else{
 
-    echo '{ "code":10001, "msg":"fail" }';
-}
+//     echo '{ "code":10001, "msg":"fail" }';
+// }
 
 
 
