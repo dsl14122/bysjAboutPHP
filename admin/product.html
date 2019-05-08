@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +9,12 @@
     <link rel="stylesheet" href="./less/base.css">
     <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="./less/index.css">
+    <link rel="stylesheet" href="./less/product.css">
+
 </head>
+
 <body>
-    <main id="main" class='main' >
+    <main id="main" class='main'>
 
         <div class="main_title">
             <div class="top_left">
@@ -30,84 +34,165 @@
         <div class="main_content">
             <div class="main_left">
                 <div class="list-group">
-                    <a href="index.html" class="list-group-item active"> 服务器信息 </a>
+                    <a href="index.html" class="list-group-item "> 服务器信息 </a>
                     <!-- 通过data-toggle 和 data-target来和后面的一级二级分类关联 点击切换
                     使用collapse插件 -->
-                    <a href="#" class="list-group-item" data-toggle="collapse" data-target="#categoryManage">个人中心</a>
-                    <div class="collapse list-group" id="categoryManage">
-                        <a href="product.html" class="list-group-item">商品管理</a>
-                        <a href="address.html" class="list-group-item">收货地址管理</a>
-                    </div>
-                    <a href="userInfo.html" class="list-group-item">用户信息管理</a>
+                    <a href="product.html" class="list-group-item active">商品管理</a>
+                    <a href="address.html" class="list-group-item">收货地址管理</a>
+
+                    <a href="userInfo.html" class="list-group-item">用户管理</a>
                 </div>
             </div>
             <div class="main_right">
-                    <table class="table table-bordered table-hover table-striped">
-                            <thead>
-                              <tr>
-                                <th>#</th>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Username</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr>
-                                <th scope="row">
-                                    <input type="checkbox">
-                                </th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                              </tr>
-                              <tr>
-                                <th scope="row">
-                                    <input type="checkbox">
-                                </th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                              </tr>
-                              <tr>
-                                <th scope="row">
-                                    <input type="checkbox">
-                                </th>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                              </tr>
-                            </tbody>
-                     </table>
+                <!-- 新增按钮 -->
+                <button type="button" class="btn btn-success " data-toggle="modal" data-target="#myModal" >
+                        新增商品
+                </button>
+
+                <!-- 新增弹框 -->
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                        aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">商品添加</h4>
+                            </div>
+                            <div class="modal-body">
+                                    <form class="add">
+                                            <div class="form-group">
+                                              <label for="name">书籍名称</label>
+                                              <input name="name" class="form-control" id="exampleInputName1" placeholder="书籍名称">
+                                            </div>
+                                            <div class="form-group">
+                                              <label for="price">书籍单价</label>
+                                              <input name="price" class="form-control" id="exampleInputPrice1" placeholder="书籍单价">
+                                            </div>
+                                            <div class="form-group">
+                                              <label for="date">出版时间</label>
+                                              <input name="date" type="date" class="form-control" id="exampleInputDate1" placeholder="出版时间">
+                                            </div>
+                                            <div class="form-group">
+                                              <label for="serial">书籍分类</label>
+                                              <input name="serial" class="form-control" id="exampleInputSerial1" placeholder="书籍分类">
+                                            </div>
+                                    </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                <button type="submit" class="btn btn-primary saveAdd">保存</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 修改弹框 -->
+                <div class="modal fade" id="myUpdateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                        aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">商品修改</h4>
+                            </div>
+                            <div class="modal-body">
+                               
+                                    <form class="updata">
+                                            <div class="form-group">
+                                              <label for="exampleInputName1">书籍名称</label>
+                                              <input name="name" class="form-control" id="exampleInputName1" placeholder="书籍名称">
+                                            </div>
+                                            <div class="form-group">
+                                              <label for="exampleInputPrice1">书籍单价</label>
+                                              <input name="price" class="form-control" id="exampleInputPrice1" placeholder="书籍单价">
+                                            </div>
+                                            <div class="form-group">
+                                              <label for="exampleInputDate1">出版时间</label>
+                                              <input name="date" type="date" class="form-control" id="exampleInputDate1" placeholder="出版时间">
+                                            </div>
+                                            <div class="form-group">
+                                              <label for="exampleInputSerial1">书籍分类</label>
+                                              <input name="serial" class="form-control" id="exampleInputSerial1" placeholder="书籍分类">
+                                            </div>
+                                          </form>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                <button type="submit" class="btn btn-primary saveUpdata">保存</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- 分页器      -->
-                <ul id="page" class="pagination">
-                    <li class="active">
-                        <a data-original-title="" title="">首页</a>
-                    </li>
-                    <li class="active">
-                        <a data-original-title="" title="">上一页</a>
-                    </li>
-                    <li class="active">
-                        <a data-original-title="" title="">1</a>
-                    </li>
-                    <li>
-                        <a data-original-title="" title="">2</a>
-                    </li>
-                    <li><a data-original-title="" title="">下一页</a>
-                    </li>
-                    <li>
-                        <a data-original-title="" title="">末页</a>
-                    </li>
-                    <li>
-                        <span><input type="text" style="width: 30px;height: 20px;" value="1">/2</span></li><li><span>跳转</span>
-                    </li>
+                <ul class="pagination pagination-sm pull-right">
+                    <li><a href="#">上一页</a></li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">下一页</a></li>
                 </ul>
+                <table class="table table-bordered table-hover table-striped">
+                    <thead>
+                        <tr>
+                            <th>
+                                <input type="checkbox">
+                            </th>
+                            <th>书籍名称</th>
+                            <th>书籍单价</th>
+                            <th>出版时间</th>
+                            <th>书籍分类</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">
+                                <input type="checkbox">
+                            </th>
+                            <td>30秒探索：数学</td>
+                            <td>2</td>
+                            <td>49</td>
+                            <td>2017-08-01</td>
+                            <td>
+                                <button type="button" class="btn btn-info">修改</button>
+                                <button type="button" class="btn btn-danger">删除</button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
             </div>
         </div>
     </main>
 
 </body>
+
 </html>
-<script src="./lib/jquery/jquery.min.js"></script>
+<!-- 创建一个模板 -->
+<script id="tpl" type="text/html">
+    {{each list value}}
+    <tr Id={{value.Id}}>
+        <th scope="row">
+            <input type="checkbox">
+        </th>
+        <td>{{value.b_name}}</td>
+
+        <td>{{value.b_price}}</td>
+        <td>{{value.b_date}}</td>
+        <td>{{value.b_serial}}</td>
+        <td>
+            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myUpdateModal" >修改</button>
+            <button type="button" class="btn btn-danger">删除</button>
+        </td>
+    </tr>
+    {{/each}}
+</script>
+
+<script src="./lib/jquery/jquery-1.12.4.js"></script>
 <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
-<script src="./lib/bootstrap/js/bootstrap-paginator.js"></script>
+<script src="./lib/jquery/jquery.twbsPagination.min.js"></script>
+<script src="./lib/artTemplate/template-web.js"></script>
 <script src="./js/product.js"></script>

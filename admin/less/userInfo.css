@@ -1,0 +1,23 @@
+#main .main_right {
+  padding: 20px 50px;
+}
+#main .main_right .page-title {
+  margin-bottom: 20px;
+}
+#main .main_right .page-title h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 400;
+}
+#main .main_right .row {
+  border: none;
+}
+#main .main_right .row .col-md-4 h2 {
+  margin-top: 5px;
+  margin-bottom: 15px;
+  font-size: 17px;
+  font-weight: 400;
+}
+#main .main_right .row .col-md-8 {
+  margin-top: 30px;
+}

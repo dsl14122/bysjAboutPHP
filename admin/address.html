@@ -30,84 +30,77 @@
         <div class="main_content">
             <div class="main_left">
                 <div class="list-group">
-                    <a href="index.html" class="list-group-item active"> 服务器信息 </a>
+                    <a href="index.html" class="list-group-item "> 服务器信息 </a>
                     <!-- 通过data-toggle 和 data-target来和后面的一级二级分类关联 点击切换
                     使用collapse插件 -->
-                    <a href="#" class="list-group-item" data-toggle="collapse" data-target="#categoryManage">个人中心</a>
-                    <div class="collapse list-group" id="categoryManage">
-                        <a href="product.html" class="list-group-item">商品管理</a>
-                        <a href="address.html" class="list-group-item">收货地址管理</a>
-                    </div>
-                    <a href="userInfo.html" class="list-group-item">用户信息管理</a>
+                    <a href="product.html" class="list-group-item">商品管理</a>
+                    <a href="address.html" class="list-group-item active">收货地址管理</a>
+                    <a href="userInfo.html" class="list-group-item">用户管理</a>
                 </div>
             </div>
             <div class="main_right">
                     <table class="table table-bordered table-hover table-striped">
-                            <thead>
-                              <tr>
-                                <th>#</th>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Username</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr>
+                        <thead>
+                            <tr>
+                                <th>
+                                    <input type="checkbox">
+                                </th>
+                                <th>姓名</th>
+                                <th>所在地区</th>
+                                <th>详细地址</th>
+                                <th>邮编</th>
+                                <th>手机</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
                                 <th scope="row">
                                     <input type="checkbox">
                                 </th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                              </tr>
-                              <tr>
-                                <th scope="row">
-                                    <input type="checkbox">
-                                </th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                              </tr>
-                              <tr>
-                                <th scope="row">
-                                    <input type="checkbox">
-                                </th>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                              </tr>
-                            </tbody>
-                     </table>
-                <!-- 分页器      -->
-                <ul id="page" class="pagination">
-                    <li class="active">
-                        <a data-original-title="" title="">首页</a>
-                    </li>
-                    <li class="active">
-                        <a data-original-title="" title="">上一页</a>
-                    </li>
-                    <li class="active">
-                        <a data-original-title="" title="">1</a>
-                    </li>
-                    <li>
-                        <a data-original-title="" title="">2</a>
-                    </li>
-                    <li><a data-original-title="" title="">下一页</a>
-                    </li>
-                    <li>
-                        <a data-original-title="" title="">末页</a>
-                    </li>
-                    <li>
-                        <span><input type="text" style="width: 30px;height: 20px;" value="1">/2</span></li><li><span>跳转</span>
-                    </li>
-                </ul>
+                                <td>戴尚龙</td>
+                                <td>江西省抚州市临川区</td>
+                                <td>学府路56号</td>
+                                <td>000000</td>
+                                <td>15798007572</td>
+                                <td>
+                                    <button type="button" class="btn btn-info">修改</button>
+                                    <button type="button" class="btn btn-danger">删除</button>
+                                </td>
+                            </tr>
+    
+                        </tbody>
+                    </table>
             </div>
         </div>
     </main>
 
 </body>
 </html>
-<script src="./lib/jquery/jquery.min.js"></script>
+<!-- 创建一个模板 -->
+<script type="text/html" id="tplTr">
+    {{each list value}}
+    <tr id='{{value.Id}}'>
+            <th scope="row">
+                    <input type="checkbox">
+            </th>
+        <td>{{value.ad_nickname}}</td>
+        <td>{{value.ad_address}} </td>
+        <td>{{value.ad_street}}</td>
+        <td>{{value.ad_post}}</td>
+        <td>{{value.ad_mobile}}</td>
+        <td>
+            <button type="button" class="btn btn-info">修改</button>
+            <button type="button" class="btn btn-danger">删除</button>
+        </td>
+    </tr>
+    {{/each}}
+</script>
+
+
+
+<script src="./lib/jquery/jquery-1.12.4.js"></script>
 <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
-<script src="./lib/bootstrap/js/bootstrap-paginator.js"></script>
+<script src="./lib/jquery/jquery.twbsPagination.min.js"></script>
+<script src="./lib/artTemplate/template-web.js"></script>
 <script src="./js/address.js"></script>
