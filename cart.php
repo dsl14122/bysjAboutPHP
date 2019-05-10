@@ -83,32 +83,30 @@
         </div>
         <div class="cart_content" id="app">
             <table border="0" cellpadding="0" cellspacing="0" id="tb">
-               <thead>
+                <thead>
                     <tr>
-                            <th width="47px">
-                                <label style="padding-left:5px;">
-                                    <input type="checkbox" checked="checked" id="chkall2">
-                                </label>
-                            </th>
-                            <th width="434px">商品</th>
-                            <th width="120px">您的价格</th>
-                            <th width="130px">数量</th>
-                            <th width="119px">单品总价</th>
-                            <th class='caozuo' width="73px">操作</th>
-                        </tr> 
-               </thead>
-               
-                <tbody >
-                  
-                   
-                   <tr v-for="(item,index) in arr" >
-                        <td><input type="checkbox" ></td>
+                        <th width="47px">
+                            <label style="padding-left:5px;">
+                                <input type="checkbox" id="all"  v-model='isCheckAll' >
+                            </label>
+                        </th>
+                        <th width="434px">商品</th>
+                        <th width="120px">您的价格</th>
+                        <th width="130px">数量</th>
+                        <th width="119px">单品总价</th>
+                        <th class='caozuo' width="73px">操作</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr v-for="(item,index) in arr">
+                        <td><input type="checkbox" v-model="item.isChecked"></td>
                         <td>
                             <div class="cart_book">
                                 <ul>
-                                    <li >
+                                    <li>
                                         <a href="#">
-                                            <img  :src="item.b_pic">
+                                            <img :src="item.b_pic">
                                         </a>
                                     </li>
                                     <li class="cart_book_name">
@@ -117,29 +115,32 @@
                                 </ul>
                             </div>
                         </td>
-                        <td >￥{{item.b_price}}</td>
+                        <td>￥{{item.b_price}}</td>
                         <td>
-                        <div >
-                            <button   @click="sub(index)" :disabled="item.cartNum==1">-</button>
-                            <input type="number" :value="item.cartNum">
-                            <button @click="add(index)"  >+</button>
-                      
-                           </div>
+                            <div>
+                                <button @click="sub(index)" :disabled="item.cartNum==1">-</button>
+                                <input type="number" :value="item.cartNum" class="Number">
+                                <button @click="add(index)">+</button>
+
+                            </div>
                         </td>
-                        <td>￥{{ item.b_price *item.cartNum }}</td>
+                        <td>￥{{ item.b_price *item.cartNum | numMath }}</td>
                         <td class='td_delete'><a href="javascript:void(0);" @click='del(index)'>删除</a></td>
-                    </tr> 
-                  
+                    </tr>
+
 
                 </tbody>
             </table>
-            <div class='count' >
-                <div class="pro_money">商品金额共计 ￥<span id="total_yuanjia">49.00</span>
-                </div> 
-                <div class='pro_total' >
-                    总计（不含运费）<span id="total_account" >￥<i>39.20</i> </span>
-                </div> 
-             </div>   
+            <div class='count'>
+                <div class="pro_money">商品金额共计 ￥<span id="total_yuanjia">{{getTotalPrice |numMath}}</span>
+                </div>
+                <div class='pro_total'>
+                    总计（不含运费）<span id="total_account">￥<i>{{getTotalPrice | numMath}}</i> </span>
+                </div>
+                <a href="index.php" class="go">&lt;&lt;继续购物</a>
+                <a href="#" class="settle">去结算</a>
+            </div>
+
         </div>
     </div>
     <!-- main模块结束 -->
@@ -212,51 +213,62 @@
 <script src="./js/template-web.js"></script>
 <script src="./js/vue.min.js"></script>
 <script>
-  $(function () {
-    // 初始化
-    Vue.filter('capitalize', function (value) {
-  if (!value) return ''
-  value = value.toString()
-  return value.charAt(0).toUpperCase() + value.slice(1)
-})
-
-
-
-   //vue 渲染页面
-      let app=new Vue({
-        el:'#app',
-        data:{
-            arr:[]
-        },
-        created:function(){
-            this.getCart()
-        },
-        methods:{
-        getCart(){
-            const that=this
-            $.ajax({
-                url:'admin/api/getCart.php',
-                dataType:'json',
-                success:function(data){
-                    console.log(data);
-                    that.arr=data
-
-                }
-            }) 
-    
+    $(function () {
+        // 初始化
+        //vue 渲染页面
+        let app = new Vue({
+            el: '#app',
+            data: {
+                arr: []
             },
-         add(index){
-            this.arr[index].cartNum++
-        },
-        sub(index){
-            this.arr[index].cartNum--
-        }, 
-          }
-     
-     })
+            created: function () {
+                this.getCart()
+            },
+            methods: {
+                getCart() {
+                    const that = this
+                    $.ajax({
+                        url: 'admin/api/getCart.php',
+                        dataType: 'json',
+                        success: function (data) {
+                            console.log(data);
+                            that.arr = data
+                        }
+                    })
+
+                },
+                add(index) {
+                    this.arr[index].cartNum++
+                },
+                sub(index) {
+                    this.arr[index].cartNum--
+                },
+            },
+            computed: {
+                
+                isCheckAll:{
+                    get(){
+                        return this.arr.every(item=>item.isChecked)
+                    },
+                    set(val){
+                        return this.arr.forEach(item=>(item.isChecked=val))
+                    }
+                },
+                getTotalPrice(){
+                    return this.arr.filter(item=>item.isChecked)
+                       .reduce((total,item)=>{
+                        return total+item.b_price *item.cartNum
+                    },0)
+                }
+                
+            },
+            filters: {
+                  numMath(value) {
+                     return value.toFixed(2);
+                  }
+                },
 
 
-
+        })
     })
-
 </script>

@@ -57,6 +57,11 @@
   border: 1px solid #ddd;
   border-width: 0 0 1px 1px;
 }
+#main .cart_content table tbody tr td .Number {
+  width: 45%;
+  height: 33px;
+  padding: 10px 20px;
+}
 #main .cart_content table tbody tr td .cart_book ul li {
   height: 91px;
   float: left;
@@ -89,4 +94,19 @@
 #main .cart_content .count .pro_total #total_account {
   color: #fc7215;
   font-size: 20px;
+}
+#main .cart_content .count a {
+  display: inline-block;
+  width: 100px;
+  height: 30px;
+  border-radius: 10px;
+  text-align: center;
+  line-height: 30px;
+  color: #fff;
+}
+#main .cart_content .count a.go {
+  background-color: skyblue;
+}
+#main .cart_content .count a.settle {
+  background-color: #fc7215;
 }
