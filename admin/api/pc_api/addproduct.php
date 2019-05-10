@@ -9,20 +9,18 @@
 
 
  //   生成sql语句
-$sql="insert into books(b_name,b_price,b_date,b_serial) 
+$sql="insert into books(b_name,b_price,b_date,b_serial,b_pic) 
 value('$name','$price','$date','$serial','./images/books_sort/这是书.jpg')";
-$res=mysqli_zsg($sql);
+$arr=mysqli_zsg($sql);
 
-  //判断结果
-  echo json_encode($res);
-//   if($res){   
+  if($arr){   
     
-//     echo '{ "code":10000, "msg":"ok" }';
+    echo '{ "code":10000, "msg":"ok" }';
     
-// }else{
+}else{
 
-//     echo '{ "code":10001, "msg":"fail" }';
-// }
+    echo '{ "code":10001, "msg":"fail" }';
+}
 
 
 ?>

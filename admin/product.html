@@ -194,7 +194,7 @@
         <td>{{value.b_serial}}</td>
         <td>
             <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myUpdateModal">修改</button>
-            <button type="button" class="btn btn-danger">删除</button>
+            <a data-id="{{value.Id}}" type="button" class="btn btn-danger delete">删除</a>
         </td>
     </tr>
     {{/each}}
