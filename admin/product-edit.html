@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>后台主页</title>
+    <link rel="stylesheet" href="./less/base.css">
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./less/index.css">
+    <link rel="stylesheet" href="./less/product.css">
+
+</head>
+
+<body>
+    <main id="main" class='main'>
+
+        <div class="main_title">
+            <div class="top_left">
+                <a href="#">
+                    <h2>书店信息管理系统界面</h2>
+                </a>
+            </div>
+            <div class="top_right">
+                <div class="user">
+                    欢迎您，<span class="usersInfo">admin</span>
+                </div>
+                <div class="logout">
+                    <a href="#"><span class="glyphicon glyphicon-log-out">退出</span></a>
+                </div>
+
+            </div>
+        </div>
+        <div class="main_content">
+            <div class="main_left">
+                <div class="list-group">
+                    <a href="index.html" class="list-group-item "> 服务器信息 </a>
+                    <!-- 通过data-toggle 和 data-target来和后面的一级二级分类关联 点击切换
+                    使用collapse插件 -->
+                    <a href="product.html" class="list-group-item active">商品管理</a>
+                    <a href="address.html" class="list-group-item">收货地址管理</a>
+
+                    <a href="userInfo.html" class="list-group-item">用户管理</a>
+                </div>
+            </div>
+            <div class="main_right">
+
+                <!-- 新增弹框
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                        aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">商品添加</h4>
+                            </div>
+                            <div class="modal-body">
+                                <form class="add">
+                                    <div class="form-group">
+                                        <label for="name">书籍名称</label>
+                                        <input name="name" class="form-control addname " id="exampleInputName1"
+                                            placeholder="书籍名称">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="price">书籍单价</label>
+                                        <input name="price" class="form-control addprice" id="exampleInputPrice1"
+                                            placeholder="书籍单价">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="date">出版时间</label>
+                                        <input name="date" type="date" class="form-control adddate" id="exampleInputDate1"
+                                            placeholder="出版时间">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="serial">书籍分类</label>
+                                        <input name="serial" class="form-control addserial" id="exampleInputSerial1"
+                                            placeholder="书籍分类">
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                <button type="submit" class="btn btn-primary saveAdd">保存</button>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+
+                 <h2>修改商品</h2>
+                 <div class="updata" style="display: block">
+                        <form >
+                                <div class="form-group">
+                                    <label for="exampleInputName1">书籍名称</label>
+                                    <input name="name" class="form-control editname"                                          placeholder="书籍名称">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPrice1">书籍单价</label>
+                                    <input name="price" class="form-control editprice" 
+                                        placeholder="书籍单价">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputDate1">出版时间</label>
+                                    <input name="date" type="date" class="form-control editdate"                                         placeholder="出版时间">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputSerial1">书籍分类</label>
+                                    <input name="serial" class="form-control editserial" 
+                                        placeholder="书籍分类">
+                                </div>
+                            </form>
+
+                            <div class="footer">
+                                    <button type="submit" class="btn btn-primary saveAdd">保存</button>
+                                </div>
+                 </div>
+                
+
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>
+
+
+<script src="./lib/jquery/jquery-1.12.4.js"></script>
+<script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="./lib/jquery/jquery.twbsPagination.min.js"></script>
+<script src="./lib/artTemplate/template-web.js"></script>
+<script >
+ $(function(){
+     //获取传进来的id
+     var str=location.href;
+    var id=str.substr(str.indexOf('=')+1);
+//    console.log(id);
+   $.get({
+   url:"./api/pc_api/getBookById.php",
+   data:{id:id},
+   dataType:"JSON",
+   success:function(obj){
+       console.log(obj);
+       console.log(obj[0].b_name);
+    $('.editname').val(obj[0].b_name);
+    $('.editprice').val(obj[0].b_price);
+    $('.editdate').val(obj[0].b_date);
+    $('.editserial').val(obj[0].b_serial);
+   }
+
+  });
+
+ })
+
+
+</script>

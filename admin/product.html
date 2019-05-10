@@ -63,22 +63,22 @@
                                 <form class="add">
                                     <div class="form-group">
                                         <label for="name">书籍名称</label>
-                                        <input name="name" class="form-control" id="exampleInputName1"
+                                        <input name="name" class="form-control addname " id="exampleInputName1"
                                             placeholder="书籍名称">
                                     </div>
                                     <div class="form-group">
                                         <label for="price">书籍单价</label>
-                                        <input name="price" class="form-control" id="exampleInputPrice1"
+                                        <input name="price" class="form-control addprice" id="exampleInputPrice1"
                                             placeholder="书籍单价">
                                     </div>
                                     <div class="form-group">
                                         <label for="date">出版时间</label>
-                                        <input name="date" type="date" class="form-control" id="exampleInputDate1"
+                                        <input name="date" type="date" class="form-control adddate" id="exampleInputDate1"
                                             placeholder="出版时间">
                                     </div>
                                     <div class="form-group">
                                         <label for="serial">书籍分类</label>
-                                        <input name="serial" class="form-control" id="exampleInputSerial1"
+                                        <input name="serial" class="form-control addserial" id="exampleInputSerial1"
                                             placeholder="书籍分类">
                                     </div>
                                 </form>
@@ -105,22 +105,22 @@
                                 <form class="updata">
                                     <div class="form-group">
                                         <label for="exampleInputName1">书籍名称</label>
-                                        <input name="name" class="form-control" id="exampleInputName1"
+                                        <input name="name" class="form-control editname"  id="exampleInputName1"
                                             placeholder="书籍名称">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputPrice1">书籍单价</label>
-                                        <input name="price" class="form-control" id="exampleInputPrice1"
+                                        <input name="price" class="form-control editprice" id="exampleInputPrice1"
                                             placeholder="书籍单价">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputDate1">出版时间</label>
-                                        <input name="date" type="date" class="form-control" id="exampleInputDate1"
+                                        <input name="date" type="date" class="form-control editdate" id="exampleInputDate1"
                                             placeholder="出版时间">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputSerial1">书籍分类</label>
-                                        <input name="serial" class="form-control" id="exampleInputSerial1"
+                                        <input name="serial" class="form-control editserial" id="exampleInputSerial1"
                                             placeholder="书籍分类">
                                     </div>
                                 </form>
@@ -193,7 +193,8 @@
         <td>{{value.b_date}}</td>
         <td>{{value.b_serial}}</td>
         <td>
-            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myUpdateModal">修改</button>
+
+            <a  data-id="{{value.Id}}" type="button" class="btn btn-info edit" data-toggle="modal" data-target="#myUpdateModal">修改</a>
             <a data-id="{{value.Id}}" type="button" class="btn btn-danger delete">删除</a>
         </td>
     </tr>
@@ -204,4 +205,5 @@
 <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="./lib/jquery/jquery.twbsPagination.min.js"></script>
 <script src="./lib/artTemplate/template-web.js"></script>
+<script src="./lib/artTemplate/moment.js"></script>
 <script src="./js/product.js"></script>

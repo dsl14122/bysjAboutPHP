@@ -60,7 +60,6 @@ $(function () {
             e.preventDefault();
             //使用FormData对象
             var fm = new FormData($('form')[0]);
-            console.log(fm);
             $.ajax({
                 type: 'post',
                 url: "./api/pc_api/addproduct.php",
@@ -118,6 +117,74 @@ $(function () {
 
 
     }
-    
 
+    // 编辑商品
+    //  点击修改按钮，弹框，将数据传到弹框内，
+    //  修改数据 调用接口，按下确认，弹框成功，重新渲染页面
+    updateProduct()
+    function updateProduct(){
+        $('tbody').on('click','.edit',function(){
+            var id = $(this).data('id');
+            $.ajax({
+                url: "./api/pc_api/getBookById.php",
+                data:{id:id},
+                dataType: "json",
+                success:function(obj){
+                    console.log(obj);
+                    $('.editname').val(obj[0].b_name);
+                    $('.editprice').val(obj[0].b_price);
+                    $('.editdate').val(obj[0].b_date);
+                    $('.editserial').val(obj[0].b_serial);
+
+                    $('.saveUpdata').on('click',function(e){
+                        e.preventDefault();
+                        console.log(obj[0].Id);
+                        id=obj[0].Id;
+                     //使用FormData对象
+                         var fm = new FormData($('.updata')[0]);
+                        //  console.log(fm);
+                         fm.append('id', id);
+                         $.ajax({
+                            type:'post',
+                            url:"./api/pc_api/bookUpdate.php",
+                            data: fm,
+                            contentType: false,
+                            processData: false,
+                            dataType: "json",
+                            success:function(obj){
+                                console.log(obj);
+                                
+                               if(obj.msg=="ok"){
+                                alert('修改成功！');
+                                location = "./product.html";
+                               }else{
+                                 alert('修改失败！');
+                               }
+                            }
+                         });
+                   })
+
+                }
+            })
+        })
+
+      
+
+
+
+    }
+
+    //全选
+    $("thead :checkbox").click(function(){
+        $("tbody :checkbox").prop("checked",this.checked);
+    });
+    //反选
+    $("tbody ").on("click",":checkbox",function(){
+        if($("tbody :checkbox").length==$("tbody :checked").length){
+         $("thead :checkbox").prop("checked",true);
+        }else{
+         $("thead :checkbox").prop("checked",false);
+        }
+     });
+    
 })
