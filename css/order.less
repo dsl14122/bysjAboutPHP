@@ -1,0 +1,154 @@
+/* head模块开始 */
+.header {
+    .search {
+        input {
+            text-indent: 0;
+            font-size: 16px;
+        }
+    }
+}
+
+/* 导航栏模块样式 */
+
+#navBar {
+
+    .flow_step {
+        height: 32px;
+        margin: 0 auto 10px;
+
+        .cols_1 {
+            width: 100%;
+
+            li {
+                width: 319px;
+                background: url('../images/step.png') no-repeat scroll 100% -64px #e6e6e6;
+                float: left;
+                padding: 0 15px 0 0;
+                text-align: center;
+                font: 700 14px/32px "宋体";
+                line-height: 32px;
+
+                &.step_1 {
+
+                    background-position: 100% -64px;
+
+                }
+
+                &.step_2 {
+                    background-color: #3164AF;
+                    color: #FFFFFF;
+                }
+
+                &.step_3 {
+                    background-image: none;
+                }
+            }
+        }
+
+    }
+}
+
+/* main模块 */
+#main {
+    // height: 300px;
+
+    .cart_title {
+        width: 100%;
+
+        h2 {
+            font-weight: bold;
+            font-size: 16px;
+            font-family: 宋体;
+            line-height: 32px;
+        }
+    }
+
+    .cart_content {
+        border: 1px solid #ccc;
+        margin-bottom: 20px;
+        font-size: 14px;
+
+        ul {
+            li {
+                padding-left: 25px;
+
+                &:nth-child(odd) {
+                    background-color: #e4f0fe;
+                    height: 32px;
+                    line-height: 32px;
+
+                    span {
+                        color: #000;
+                    }
+
+                    a {
+                        color: #3164AF;
+                        font-size: 12px;
+                    }
+                }
+
+                &:nth-child(even) {
+                    height: 45px;
+                    line-height: 45px;
+
+                    span {
+                        font-size: 12px;
+                    }
+                }
+
+                &.tableList {
+                    height: 245px;
+                   table{
+                       width: 95%;
+                       margin-top: 10px;
+                       text-align: center;
+                       thead{
+                           background-color: #fff8e7;
+                       }
+                       tbody{
+                         color: #000;
+                         .blue{
+                             color:#3164AF; 
+                         }
+                       }
+                   }
+                }
+            }
+        }
+        .count{
+            text-align: right;
+            .money1{
+                margin-right: 10px;
+                margin-bottom: 5px;
+                 span{
+                     color: #000;
+                 }
+                 i{
+                     font-size: 28px;
+                     font-weight: bold;
+                     color: #fc7215;
+                 }
+            }
+            .money2{
+                height: 40px;
+                line-height: 40px;
+                margin-right: 10px;
+                margin-bottom: 5px;
+                span{
+                    font-size: 12px;
+                }
+                a{
+                    display: inline-block;
+                    width: 120px;
+                    height: 40px;
+                    background-color: #fc7215;
+                    text-align: center;
+                    border-radius: 10px;
+                    font-size: 18px;
+                    color: #fff;
+                }
+            }
+        }
+
+    }
+}

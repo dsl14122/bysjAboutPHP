@@ -19,7 +19,7 @@
         <div class="w">
             <div class="wlecome">
                 <span>欢迎光临</span>
-                <a href="#">致青春书屋</a>
+                <a href="index.php">致青春书屋</a>
                 <?php
                 //开启session
                 session_start();
@@ -62,7 +62,7 @@
             <a href="#">搜 书</a>
         </div>
         <div class="car">
-            <span>购物车</span>
+        <a href="cart.php">购物车</a>
         </div>
         <div class="item">
             <span>热门搜索：</span>
@@ -553,6 +553,8 @@
       })
 </script>
 <script>
+    $(function(){
+
     // 获取传进来的id
     var str=location.href;
     var id=str.substr(str.indexOf('=')+1);
@@ -567,5 +569,12 @@
            $('#price').html(obj.b_price);
        }
    });
+
+   $('.shopcart').on('click',function(){
+        alert('已加入购物车！');
+   })
+   
+    })
+
 </script>
 

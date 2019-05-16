@@ -98,8 +98,11 @@
     border: 1px solid #dddddd;
     background:url(../images/首页图片/shopcart.png) no-repeat;
 }
-.header .car span{
-    display: block;
+.header .car a{
+    display: inline-block;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
     margin-top: 2px;
     margin-left: 20px;
     font-size: 18px;

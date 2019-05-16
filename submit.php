@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="css/submit.css">
+
 </head>
 
 <body>
@@ -58,10 +59,6 @@
         <div class="logo">
             <h1><a href="#">致青春书屋</a></h1>
         </div>
-        <div class="search">
-            <input type="text" placeholder="谁的青春不迷茫">
-            <a href="#">搜 书</a>
-        </div>
     </div>
     <!-- head模块结束 -->
     <!-- 导航栏模块开始  -->
@@ -79,65 +76,11 @@
     <!-- main模块开始 -->
     <div id="main" class='w'>
         <div class="cart_title">
-            <h2 class='mycart'>我的购物车</h2>
+            <img src="./images/true.jpg" alt="">
+            <span class='mycart'>恭喜您,订单提交成功！请扫码支付</span>
         </div>
         <div class="cart_content" id="app">
-            <table border="0" cellpadding="0" cellspacing="0" id="tb">
-                <thead>
-                    <tr>
-                        <th width="47px">
-                            <label style="padding-left:5px;">
-                                <input type="checkbox" id="all"  v-model='isCheckAll' >
-                            </label>
-                        </th>
-                        <th width="434px">商品</th>
-                        <th width="120px">您的价格</th>
-                        <th width="130px">数量</th>
-                        <th width="119px">单品总价</th>
-                        <th class='caozuo' width="73px">操作</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    <tr v-for="(item,index) in arr" >
-                        <td><input type="checkbox" :checkbox="item.isChecked" v-model="item.isChecked" ></td>
-                        <td>
-                            <div class="cart_book">
-                                <ul>
-                                    <li>
-                                    <a href="#"><img :src="item.b_pic"></a>
-                                    </li>
-                                    <li class="cart_book_name">
-                                        <a href="#">{{item.b_name}}</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </td>
-                        <td>￥{{item.b_price}}</td>
-                        <td>
-                            <div>
-                                <button @click="sub(index)" :disabled="item.cartNum==1">-</button>
-                                <input type="number" :value="item.cartNum" class="Number">
-                                <button @click="add(index)">+</button>
-
-                            </div>
-                        </td>
-                        <td>￥{{ item.b_price *item.cartNum | numMath }}</td>
-                        <td class='td_delete'><a href="javascript:void(0);" @click='del(index)'>删除</a></td>
-                    </tr>
-
-                </tbody>
-            </table>
-            <div class='count'>
-                <div class="pro_money">商品金额共计 ￥<span id="total_yuanjia">{{getTotalPrice |numMath}}</span>
-                </div>
-                <div class='pro_total'>
-                    总计（不含运费）<span id="total_account">￥<i>{{getTotalPrice | numMath}}</i> </span>
-                </div>
-                <a href="index.php" class="go">&lt;&lt;继续购物</a>
-                <a  @click="getOrder" href="order.php"  class="settle">去结算</a>
-                <!-- href="order.php"  -->
-            </div>
+            <img src="./images/gitCode.png" alt="">
 
         </div>
     </div>
@@ -206,78 +149,9 @@
 
 </html>
 <script src="js/jquery-1.12.4.js"></script>
-<!-- <script src="./js/mui.min.js"></script> -->
 
 <script src="./js/template-web.js"></script>
 <script src="./js/vue.min.js"></script>
 <script>
-    $(function () {
-        // 初始化
-        //vue 渲染页面
-        let app = new Vue({
-            el: '#app',
-            data: {
-                arr: [],
-            },
-            created() {
-                this.getCart()
-            },
-            methods: {
-                getCart() {
-                    $.ajax({
-                        url: 'admin/api/getCart.php',
-                        dataType: 'json',
-                        success: data=> {
-                            console.log(data);
-                            this.arr = data
-                        }
-                    })
-
-                },
-                add(index) {
-                    this.arr[index].cartNum++
-                },
-                sub(index) {
-                    this.arr[index].cartNum--
-                },
-                getOrder(){
-                    
-                    const newArr= this.arr.filter(i=> {
-                        return i.isChecked
-                    })
-                    // console.log(newArr);
-                    
-                    window.sessionStorage.setItem('product', JSON.stringify(newArr));
-                  var product=  window.sessionStorage.getItem('product') 
-                //   console.log(product);
-                   
-                }
-            },
-            computed: {
-                
-                isCheckAll:{
-                    get(){
-                        return this.arr.every(item=>item.isChecked)
-                    },
-                    set(val){
-                        return this.arr.forEach(item=>(item.isChecked=val))
-                    }
-                },
-                getTotalPrice(){
-                    return this.arr.filter(item=>item.isChecked)
-                       .reduce((total,item)=>{
-                        return total+item.b_price * item.cartNum
-                    },0)
-                }
-                
-            },
-            filters: {
-                  numMath(value) {
-                     return value.toFixed(2);
-                  }
-                },
-
-
-        })
-    })
+    
 </script>

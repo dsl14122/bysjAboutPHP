@@ -1,0 +1,120 @@
+/* head模块开始 */
+.header .search input {
+  text-indent: 0;
+  font-size: 16px;
+}
+/* 导航栏模块样式 */
+#navBar .flow_step {
+  height: 32px;
+  margin: 0 auto 10px;
+}
+#navBar .flow_step .cols_1 {
+  width: 100%;
+}
+#navBar .flow_step .cols_1 li {
+  width: 319px;
+  background: url('../images/step.png') no-repeat scroll 100% -64px #e6e6e6;
+  float: left;
+  padding: 0 15px 0 0;
+  text-align: center;
+  font: 700 14px/32px "宋体";
+  line-height: 32px;
+}
+#navBar .flow_step .cols_1 li.step_1 {
+  background-position: 100% -64px;
+}
+#navBar .flow_step .cols_1 li.step_2 {
+  background-color: #3164AF;
+  color: #FFFFFF;
+}
+#navBar .flow_step .cols_1 li.step_3 {
+  background-image: none;
+}
+/* main模块 */
+#main .cart_title {
+  width: 100%;
+}
+#main .cart_title h2 {
+  font-weight: bold;
+  font-size: 16px;
+  font-family: 宋体;
+  line-height: 32px;
+}
+#main .cart_content {
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+#main .cart_content ul li {
+  padding-left: 25px;
+}
+#main .cart_content ul li:nth-child(odd) {
+  background-color: #e4f0fe;
+  height: 32px;
+  line-height: 32px;
+}
+#main .cart_content ul li:nth-child(odd) span {
+  color: #000;
+}
+#main .cart_content ul li:nth-child(odd) a {
+  color: #3164AF;
+  font-size: 12px;
+}
+#main .cart_content ul li:nth-child(even) {
+  height: 45px;
+  line-height: 45px;
+}
+#main .cart_content ul li:nth-child(even) span {
+  font-size: 12px;
+}
+#main .cart_content ul li.tableList {
+  height: 245px;
+}
+#main .cart_content ul li.tableList table {
+  width: 95%;
+  margin-top: 10px;
+  text-align: center;
+}
+#main .cart_content ul li.tableList table thead {
+  background-color: #fff8e7;
+}
+#main .cart_content ul li.tableList table tbody {
+  color: #000;
+}
+#main .cart_content ul li.tableList table tbody .blue {
+  color: #3164AF;
+}
+#main .cart_content .count {
+  text-align: right;
+}
+#main .cart_content .count .money1 {
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+#main .cart_content .count .money1 span {
+  color: #000;
+}
+#main .cart_content .count .money1 i {
+  font-size: 28px;
+  font-weight: bold;
+  color: #fc7215;
+}
+#main .cart_content .count .money2 {
+  height: 40px;
+  line-height: 40px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+#main .cart_content .count .money2 span {
+  font-size: 12px;
+}
+#main .cart_content .count .money2 a {
+  display: inline-block;
+  width: 120px;
+  height: 40px;
+  background-color: #fc7215;
+  text-align: center;
+  border-radius: 10px;
+  font-size: 18px;
+  color: #fff;
+}

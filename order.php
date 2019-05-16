@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="css/order.css">
+
 </head>
 
 <body>
@@ -58,10 +59,6 @@
         <div class="logo">
             <h1><a href="#">致青春书屋</a></h1>
         </div>
-        <div class="search">
-            <input type="text" placeholder="谁的青春不迷茫">
-            <a href="#">搜 书</a>
-        </div>
     </div>
     <!-- head模块结束 -->
     <!-- 导航栏模块开始  -->
@@ -79,66 +76,57 @@
     <!-- main模块开始 -->
     <div id="main" class='w'>
         <div class="cart_title">
-            <h2 class='mycart'>我的购物车</h2>
+            <h2 class='mycart'>确认订单信息</h2>
         </div>
         <div class="cart_content" id="app">
-            <table border="0" cellpadding="0" cellspacing="0" id="tb">
-                <thead>
-                    <tr>
-                        <th width="47px">
-                            <label style="padding-left:5px;">
-                                <input type="checkbox" id="all"  v-model='isCheckAll' >
-                            </label>
-                        </th>
-                        <th width="434px">商品</th>
-                        <th width="120px">您的价格</th>
-                        <th width="130px">数量</th>
-                        <th width="119px">单品总价</th>
-                        <th class='caozuo' width="73px">操作</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    <tr v-for="(item,index) in arr" >
-                        <td><input type="checkbox" :checkbox="item.isChecked" v-model="item.isChecked" ></td>
-                        <td>
-                            <div class="cart_book">
-                                <ul>
-                                    <li>
-                                    <a href="#"><img :src="item.b_pic"></a>
-                                    </li>
-                                    <li class="cart_book_name">
-                                        <a href="#">{{item.b_name}}</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </td>
-                        <td>￥{{item.b_price}}</td>
-                        <td>
-                            <div>
-                                <button @click="sub(index)" :disabled="item.cartNum==1">-</button>
-                                <input type="number" :value="item.cartNum" class="Number">
-                                <button @click="add(index)">+</button>
-
-                            </div>
-                        </td>
-                        <td>￥{{ item.b_price *item.cartNum | numMath }}</td>
-                        <td class='td_delete'><a href="javascript:void(0);" @click='del(index)'>删除</a></td>
-                    </tr>
-
-                </tbody>
-            </table>
+            <ul>
+                <li>
+                    <span>收货信息</span>
+                    <a href="#">【修改】</a>
+                </li>
+                <li>
+                    <span>戴龙&nbsp;&nbsp;&nbsp;江西省抚州市临川区&nbsp;&nbsp;&nbsp;学府路56号
+                        &nbsp;&nbsp;&nbsp;000000&nbsp;&nbsp;&nbsp;15798007572 </span>
+                </li>
+                <li> <span>支付方式</span>
+                    <a href="#">【修改】</a></li>
+                <li>
+                    <span>在线支付</span>
+                </li>
+                <li>
+                    <span>商品清单</span>
+                </li>
+                <li class="tableList">
+                    <table border="1" cellpadding="0" cellspacing="0" id="tb">
+                        <thead>
+                            <tr>
+                                <th>纸质书</th>
+                                <th>价格</th>
+                                <th>数量</th>
+                                <th>小计</th>
+                            </tr>
+                        </thead>
+                        <tbody >
+                            <tr v-for="(item, index) in arr" :key="index">
+                                <td class="blue">{{item.b_name}}</td>
+                                <td>￥{{item.b_price}}</td>
+                                <td>{{item.cartNum}}</td>
+                                <td>￥{{item.b_price *item.cartNum | numMath}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </li>
+            </ul>
             <div class='count'>
-                <div class="pro_money">商品金额共计 ￥<span id="total_yuanjia">{{getTotalPrice |numMath}}</span>
-                </div>
-                <div class='pro_total'>
-                    总计（不含运费）<span id="total_account">￥<i>{{getTotalPrice | numMath}}</i> </span>
-                </div>
-                <a href="index.php" class="go">&lt;&lt;继续购物</a>
-                <a  @click="getOrder" href="order.php"  class="settle">去结算</a>
-                <!-- href="order.php"  -->
+                 <div class="money1">
+                     <span>应付总计：</span>
+                      <i>￥{{getTotalPrice | numMath}}</i>
+                 </div>
+                 <div class="money2">
+                     <span>请确认以上信息无误&nbsp;&nbsp;</span>
+                     <a href="submit.php">提交订单</a>
+                 </div>
             </div>
-
         </div>
     </div>
     <!-- main模块结束 -->
@@ -206,78 +194,39 @@
 
 </html>
 <script src="js/jquery-1.12.4.js"></script>
-<!-- <script src="./js/mui.min.js"></script> -->
 
 <script src="./js/template-web.js"></script>
 <script src="./js/vue.min.js"></script>
 <script>
-    $(function () {
-        // 初始化
-        //vue 渲染页面
-        let app = new Vue({
-            el: '#app',
-            data: {
-                arr: [],
+   $(function(){
+       let app=new Vue({
+          el: '#app',
+          data: {
+              arr: [],
+          },
+          created() {
+                this.getOrder();
             },
-            created() {
-                this.getCart()
-            },
-            methods: {
-                getCart() {
-                    $.ajax({
-                        url: 'admin/api/getCart.php',
-                        dataType: 'json',
-                        success: data=> {
-                            console.log(data);
-                            this.arr = data
-                        }
-                    })
-
-                },
-                add(index) {
-                    this.arr[index].cartNum++
-                },
-                sub(index) {
-                    this.arr[index].cartNum--
-                },
-                getOrder(){
-                    
-                    const newArr= this.arr.filter(i=> {
-                        return i.isChecked
-                    })
-                    // console.log(newArr);
-                    
-                    window.sessionStorage.setItem('product', JSON.stringify(newArr));
-                  var product=  window.sessionStorage.getItem('product') 
-                //   console.log(product);
-                   
-                }
-            },
-            computed: {
-                
-                isCheckAll:{
-                    get(){
-                        return this.arr.every(item=>item.isChecked)
-                    },
-                    set(val){
-                        return this.arr.forEach(item=>(item.isChecked=val))
-                    }
-                },
-                getTotalPrice(){
-                    return this.arr.filter(item=>item.isChecked)
-                       .reduce((total,item)=>{
+          methods: {
+             getOrder(){
+                 this.arr=JSON.parse(window.sessionStorage.getItem('product'));
+                 console.log(this.arr);   
+             },
+            
+          },
+          computed: {
+               getTotalPrice(){
+                    return this.arr.reduce((total,item)=>{
                         return total+item.b_price * item.cartNum
                     },0)
                 }
-                
-            },
-            filters: {
+          },
+          filters: {
                   numMath(value) {
                      return value.toFixed(2);
                   }
-                },
+                },  
 
-
-        })
-    })
+       })
+   })
 </script>

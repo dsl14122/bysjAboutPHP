@@ -1,0 +1,47 @@
+/* head模块开始 */
+.header .search input {
+  text-indent: 0;
+  font-size: 16px;
+}
+/* 导航栏模块样式 */
+#navBar .flow_step {
+  height: 32px;
+  margin: 0 auto 10px;
+}
+#navBar .flow_step .cols_1 {
+  width: 100%;
+}
+#navBar .flow_step .cols_1 li {
+  width: 319px;
+  background: url('../images/step.png') no-repeat scroll 100% -64px #e6e6e6;
+  float: left;
+  padding: 0 15px 0 0;
+  text-align: center;
+  font: 700 14px/32px "宋体";
+  line-height: 32px;
+}
+#navBar .flow_step .cols_1 li.step_1 {
+  background-position: 100% -64px;
+}
+#navBar .flow_step .cols_1 li.step_3 {
+  background-image: none;
+  background-color: #3164AF;
+  color: #FFFFFF;
+}
+/* main模块 */
+#main .cart_title {
+  width: 100%;
+  text-align: center;
+  margin: 15px 0;
+}
+#main .cart_title span {
+  font-size: 14px;
+  font-family: 宋体;
+  line-height: 32px;
+  color: red;
+  font-weight: bold;
+}
+#main .cart_content {
+  text-align: center;
+  margin-bottom: 20px;
+}

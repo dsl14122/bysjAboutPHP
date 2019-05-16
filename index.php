@@ -61,7 +61,7 @@
             <a href="#">搜 书</a>
         </div>
         <div class="car">
-            <span>购物车</span>
+            <a href="cart.php">购物车</a>
         </div>
         <div class="item">
             <span>热门搜索：</span>
